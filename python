@@ -1,0 +1,54 @@
+""" John is tasked with configuring the lighting for a high-profile event, where different lighting modes affect the ambiance of the venue. He can choose from three distinct lighting modes, each requiring a specific adjustment to the initial light intensity:
+
+
+
+Ambient Lighting (Mode 1): The intensity level is multiplied by 1.5.
+Stage Lighting (Mode 2): The intensity level is multiplied by 2.0.
+Spotlight (Mode 3): The intensity level is multiplied by 1.8.
+
+
+In the event that an invalid mode is provided, the program should output an error message indicating the invalid selection. 
+
+
+
+Your task is to write a program that reads the selected lighting mode and the initial intensity level, applies the appropriate adjustment, and prints the final intensity.
+
+Input format :
+The first line of input is an integer n, representing the lighting mode.
+
+The second line is a floating value m, representing the initial intensity level of the light.
+
+Output format :
+The output displays "Intensity: " followed by a float representing the adjusted intensity level, formatted to two decimal places, if the mode is valid.
+
+If the mode is invalid, the output should display "Invalid"."""
+
+
+# Read the lighting mode
+lightingMode = int(input())
+
+# Initialize the intensity level variable
+intensityLevel = 0.0
+
+# Using a while loop to mimic switch-case behavior
+mode_found = False
+while not mode_found:
+    if lightingMode == 1:  # Disco lights
+        intensityLevel = float(input())
+        intensityLevel *= 1.5  # Multiply by 1.5
+        mode_found = True
+    elif lightingMode == 2:  # Strobe lights
+        intensityLevel = float(input())
+        intensityLevel *= 2  # Multiply by 2
+        mode_found = True
+    elif lightingMode == 3:  # Laser lights
+        intensityLevel = float(input())
+        intensityLevel *= 1.8  # Multiply by 1.8
+        mode_found = True
+    else:
+        print("Invalid")
+        break
+
+if mode_found:
+    # Print the intensity level with 2 decimal places
+    print(f"Intensity: {intensityLevel:.2f}")
